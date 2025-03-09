@@ -1,0 +1,7 @@
+requests
+Pillow
+tqdm
+pdf2image
+argparse
+ollama
+streamlit
