@@ -1,0 +1,8 @@
+{
+  "filename": "openai_one_page.pdf",
+  "timestamp": "20250309_121605",
+  "total_pages": 1,
+  "pages": {
+    "1": "\nThe slide is titled \"Generating Output\" and appears to be a flowchart illustrating a process in a programming context. The flowchart consists of four main steps: Tokenize Input Sequence, Predict Next Token, Append Output Token to Input Sequence, and Stop Token Received? If the answer is No, it loops back to Tokenize Input Sequence. If the answer is Yes, it proceeds to Generation Finished.\n\nThe first step involves tokenizing the input sequence, which means breaking down the input into smaller units called tokens. The second step predicts the next token in the sequence based on the current context. The third step appends the output token to the input sequence. If the token received is not a stop token, the process loops back to the first step. If it is a stop token, the process ends and generates the final output.\n\nThe flowchart uses a diamond-shaped decision point to represent the \"Stop Token Received?\" question. The answer to this question determines whether the loop continues or if the generation process concludes. There are no other visual elements such as graphs, charts, or icons present in the slide."
+  }
+}

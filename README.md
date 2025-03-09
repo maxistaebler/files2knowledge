@@ -1,6 +1,8 @@
 # How to Use the Code for Images or PDF Files
 
-You can use the application to process both images and PDF files. Here's a step-by-step guide:
+You can use the application to process both images and PDF files. There are two ways to use this tool:
+1. Command-line interface
+2. Streamlit web dashboard
 
 ## Prerequisites
 
@@ -14,7 +16,39 @@ Before you start, make sure you have:
    - Ubuntu/Debian: `apt-get install poppler-utils`
    - Windows: Follow instructions at [pdf2image documentation](https://pdf2image.readthedocs.io/en/latest/installation.html)
 
-## Processing a Single Image
+## Streamlit Dashboard (Recommended)
+
+The easiest way to use this tool is through the Streamlit web dashboard:
+
+```bash
+streamlit run app.py
+```
+
+This will open a web interface in your browser where you can:
+
+1. **Upload files**: Drag and drop images or PDFs
+2. **Configure settings**: 
+   - Select the Ollama model to use
+   - Customize the prompt
+   - Choose the output directory
+3. **Process files**: Click the "Process Files" button
+4. **View results**: See the original images/PDF pages alongside the extracted information
+   - For PDFs, up to 3 pages will be displayed for preview
+   - All results are saved to your selected output directory
+
+### Streamlit Dashboard Features
+
+- **Side-by-side comparison**: View original content and AI-generated descriptions together
+- **Interactive UI**: Easy file upload and configuration
+- **Visual feedback**: Progress bars and status updates during processing
+- **Responsive layout**: Works on desktop and mobile browsers
+- **Result previews**: See the extracted information immediately after processing
+
+## Command-line Interface
+
+You can also use the command-line interface for batch processing or automation.
+
+### Processing a Single Image
 
 To process a single image file:
 
@@ -22,7 +56,10 @@ To process a single image file:
 python src/files2knowledge.py --input_path /path/to/your/image.jpg --output_dir /path/to/output
 ```
 
+Example:
+```bash
 python src/files2knowledge.py --input_path ./input/openai/openai_one_page.jpeg --output_dir ./output/openai
+```
 
 This will:
 1. Load the image
@@ -39,7 +76,7 @@ The output JSON will look like:
 }
 ```
 
-## Processing a PDF File
+### Processing a PDF File
 
 To process a PDF file:
 
@@ -68,7 +105,7 @@ The combined JSON will look like:
 }
 ```
 
-## Processing a Directory
+### Processing a Directory
 
 To process all images and PDFs in a directory:
 
@@ -100,11 +137,23 @@ python src/files2knowledge.py --input_path /path/to/image.jpg --output_dir /path
 
 ## Example Workflow
 
+### Using the Streamlit Dashboard
+
+1. **Start Ollama**: Make sure Ollama is running on your machine
+2. **Launch the dashboard**: Run `streamlit run app.py`
+3. **Upload files**: Drag and drop your images or PDFs
+4. **Configure settings**: Adjust model, prompt, and output directory if needed
+5. **Process files**: Click the "Process Files" button
+6. **View results**: See the side-by-side comparison of original content and extracted information
+7. **Access output files**: Find the JSON files in your specified output directory
+
+### Using the Command Line
+
 1. **Start Ollama**: Make sure Ollama is running on your machine
 2. **Prepare your files**: Gather the images or PDFs you want to process
 3. **Run the command**:
    ```bash
-   python src/pptx2knowledge.py --input_path ~/Documents/presentation.pdf --output_dir ~/Documents/output
+   python src/files2knowledge.py --input_path ~/Documents/presentation.pdf --output_dir ~/Documents/output
    ```
 4. **Check the results**: Look in your output directory for the JSON files with descriptions
 
